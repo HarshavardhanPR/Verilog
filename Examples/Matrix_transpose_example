@@ -1,0 +1,27 @@
+module matrix_transpose_N_N;
+  parameter ROWS = 3;
+  parameter COLS = 3;
+  parameter WIDTH = 8;
+  reg [WIDTH-1:0] matrix [0:ROWS-1][0:COLS-1];
+  reg [WIDTH-1:0] transposed [0:COLS-1][0:ROWS-1];  
+  integer r, c;
+  initial begin
+    // Fill matrix with sample data (row * 10 + col)
+    for (r = 0; r < ROWS; r = r + 1) begin
+      for (c = 0; c < COLS; c = c + 1) begin
+        matrix[r][c] = (r * 10) + c;
+      end
+    end
+    // Transpose Loop
+    for (r = 0; r < ROWS; r = r + 1) begin
+      for (c = 0; c < COLS; c = c + 1) begin
+        transposed[c][r] = matrix[r][c];
+      end
+    end
+    // Print rows of transposed matrix
+    for (r = 0; r < COLS; r = r + 1) begin
+      $display("Transposed Row %0d: %d %d %d", r, transposed[r][0], transposed[r][1], transposed[r]
+[2]);
+    end
+  end
+endmodule
