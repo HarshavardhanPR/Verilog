@@ -1,0 +1,15 @@
+module shift_ops;
+  reg [7:0] data;
+initial begin
+  data = 8'b1000_1100; // -116 in signed decimal
+    // 1. Logical Right Shift (>>)
+    // Result: 0100_0110 (The 1 at MSB is replaced by 0)
+  $display("Logical Right: %b", data >> 1);
+    // 2. Arithmetic Right Shift (>>>)
+    // Result: 1100_0110 (The 1 at MSB is preserved/replicated)
+  $display("Arithmetic Right: %b", $signed(data) >>> 1);
+    // 3. Left Shifts (Both behave the same)
+    // Result: 0001_1000
+  $display("Left Shift: %b", data << 1);
+end
+endmodule
