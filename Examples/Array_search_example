@@ -1,0 +1,18 @@
+module array_search;
+  reg [7:0] ram [0:4];
+  reg [7:0] target = 8'd42;
+  integer i;
+  integer found_index = -1;
+initialbegin
+    ram[0]=10; ram[1]=20; ram[2]=42; ram[3]=80; ram[4]=5;
+for(i = 0; i < 5; i = i + 1) begin
+      if (ram[i] == target) begin
+        found_index = i;
+      end
+    end
+if(found_index != -1)
+      $display("Target %d found at index %0d", target, found_index);
+    else
+      $display("Target not found");
+  end
+endmodule
