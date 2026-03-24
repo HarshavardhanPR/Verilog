@@ -1,0 +1,11 @@
+module for_example;
+  integer i;
+  reg [3:0] shift_reg;
+initialbegin
+    shift_reg = 4'b1011;
+    // Example: Counting bits or shifting
+    for (i = 0; i < 4; i = i + 1) begin
+      $display("Iteration %0d: bit is %b", i, shift_reg[i]);
+    end
+  end
+endmodule
