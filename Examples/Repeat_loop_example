@@ -1,7 +1,5 @@
 module repeat_example;
   reg clk;
-   Udemy Page 4   
-  reg clk;
 initial begin
     clk = 0;
     // Toggle clock 16 times
