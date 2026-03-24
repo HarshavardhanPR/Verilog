@@ -1,0 +1,21 @@
+module repeat_example;
+  reg clk;
+   Udemy Page 4   
+  reg clk;
+initial begin
+    clk = 0;
+    // Toggle clock 16 times
+  repeat (16) begin
+      #5 clk = ~clk;
+      $display("Clock toggled at time %0t", $time);
+    end
+  end
+  
+  initial begin
+    $dumpfile("dump.vcd");
+    $dumpvars(1);
+    #100;
+    $finish;
+  end
+endmodule
+ 
