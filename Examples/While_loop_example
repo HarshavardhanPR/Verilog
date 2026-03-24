@@ -1,0 +1,10 @@
+module while_example;
+  integer count;
+initialbegin
+    count = 0;
+    while (count < 5) begin
+      $display("Count is %0d", count);
+      count = count + 1; 
+    end
+  end
+endmodule
