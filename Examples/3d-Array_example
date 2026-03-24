@@ -1,0 +1,12 @@
+module array_3d;
+  // Format: [DataWidth] Name [Pages][Rows][Columns]
+  reg [7:0] cube [0:1][0:1][0:1]; // 2x2x2 cube
+  
+  initial begin
+    // Assigning values to specific coordinates
+    cube[0][0][0] = 8'd10; // Page 0, Row 0, Col 0
+    cube[1][1][1] = 8'd99; // Page 1, Row 1, Col 1
+    
+    $display("Value at [1][1][1]: %d", cube[1][1][1]);
+  end
+endmodule
