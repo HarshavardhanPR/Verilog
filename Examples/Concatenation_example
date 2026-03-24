@@ -1,0 +1,16 @@
+module concat_example;
+reg [3:0] a;
+reg [3:0] b;
+reg [7:0] combined;
+reg [7:0] replicated;
+initial begin
+a = 4'b1010;
+b = 4'b0011;
+combined = {a, b};
+$display("Concatenation: %b", combined);
+replicated = {2{a}};
+$display("Replication: %b", replicated);
+// Mixed: Sign extending 'a' (4-bit) to 8-bit
+$display("Sign Extension: %b", {{4{a[3]}}, a});
+end
+endmodule
